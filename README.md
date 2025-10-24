@@ -1,67 +1,67 @@
-# 🚀 Kommo CRM Integration
+# 🚀 Kommo CRM Интеграция
 
-Production-ready integration for syncing orders from Google Sheets to Kommo CRM with automated contact management and lead generation.
+Production-ready интеграция для синхронизации заказов из Google Sheets в Kommo CRM с автоматическим управлением контактами и созданием сделок.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
 ---
 
-## 📋 Overview
+## 📋 Обзор
 
-This integration bridges your sales automation workflow by:
-- 🔄 **Automatically syncing orders** from Google Sheets to Kommo CRM
-- 👥 **Creating contacts** with Telegram metadata (ID, username, chat link)
-- 💰 **Generating leads (deals)** for each order in the CRM
-- 📝 **Adding timeline notes** with order details
-- 🏷️ **Tagging contacts** (Support, Docs, Refund, Billing)
-- ✅ **Deduplicating orders** to prevent duplicate entries
-- 🔁 **Running continuously** with scheduled synchronization
+Эта интеграция объединяет ваш процесс автоматизации продаж:
+- 🔄 **Автоматическая синхронизация заказов** из Google Sheets в Kommo CRM
+- 👥 **Создание контактов** с метаданными Telegram (ID, username, ссылка на чат)
+- 💰 **Генерация сделок** для каждого заказа в CRM
+- 📝 **Добавление заметок в timeline** с деталями заказа
+- 🏷️ **Тегирование контактов** (Support, Docs, Refund, Billing)
+- ✅ **Дедупликация заказов** для предотвращения дубликатов
+- 🔁 **Непрерывная работа** по расписанию
 
-Perfect for businesses using Telegram bots for sales and support, wanting to centralize data in Kommo CRM.
-
----
-
-## ✨ Features
-
-### Core Functionality
-- ✅ **Google Sheets Integration** - Reads orders from specified sheet/tab
-- ✅ **Kommo CRM API** - Full API integration with retry logic
-- ✅ **Automatic Contact Creation** - Creates contacts if not found by Telegram ID
-- ✅ **Lead Generation** - Creates deals/leads for each order
-- ✅ **Timeline Notes** - Adds formatted notes to contact timeline
-- ✅ **Smart Tagging** - Automatically tags contacts based on activity
-- ✅ **Deduplication** - Prevents duplicate orders using fingerprinting
-- ✅ **Error Handling** - Comprehensive error handling with retries
-- ✅ **Logging** - Detailed logs with rotation
-
-### Demo & Testing
-- 🎭 **Unified Demo Runner** - Run all modules in one process
-- 🤖 **Contact Generator** - Simulates Telegram support bot interactions
-- 🛍️ **Order Generator** - Simulates sales bot creating orders
-- 📊 **Live Dashboard** - Real-time sync statistics
+Идеально для бизнеса, использующего Telegram ботов для продаж и поддержки, желающего централизовать данные в Kommo CRM.
 
 ---
 
-## 🛠️ Requirements
+## ✨ Возможности
+
+### Основной функционал
+- ✅ **Интеграция с Google Sheets** - Чтение заказов из указанной таблицы
+- ✅ **Kommo CRM API** - Полная интеграция с логикой повторных попыток
+- ✅ **Автоматическое создание контактов** - Создаёт контакты если не найдены по Telegram ID
+- ✅ **Генерация сделок** - Создаёт сделки/лиды для каждого заказа
+- ✅ **Timeline заметки** - Добавляет форматированные заметки в timeline контакта
+- ✅ **Умное тегирование** - Автоматически проставляет теги в зависимости от активности
+- ✅ **Дедупликация** - Предотвращает дублирование заказов через fingerprinting
+- ✅ **Обработка ошибок** - Комплексная обработка ошибок с повторными попытками
+- ✅ **Логирование** - Подробные логи с ротацией
+
+### Демо и тестирование
+- 🎭 **Объединённый демо-раннер** - Запуск всех модулей в одном процессе
+- 🤖 **Генератор контактов** - Симулирует взаимодействия бота поддержки Telegram
+- 🛍️ **Генератор заказов** - Симулирует создание заказов ботом продаж
+- 📊 **Живая статистика** - Статистика синхронизации в реальном времени
+
+---
+
+## 🛠️ Требования
 
 - **Python 3.10+**
-- **Google Service Account** with Sheets API access
-- **Kommo CRM Account** with API access token
-- **Google Sheet** with orders data
+- **Google Service Account** с доступом к Sheets API
+- **Kommo CRM аккаунт** с API токеном доступа
+- **Google Таблица** с данными заказов
 
 ---
 
-## 📦 Installation
+## 📦 Установка
 
-### 1. Clone Repository
+### 1. Клонировать репозиторий
 
 ```bash
 git clone https://github.com/automatesh/kommo-crm-integration.git
 cd kommo-crm-integration
 ```
 
-### 2. Create Virtual Environment
+### 2. Создать виртуальное окружение
 
 ```bash
 python -m venv venv
@@ -73,128 +73,128 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-### 3. Install Dependencies
+### 3. Установить зависимости
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Setup Configuration
+### 4. Настроить конфигурацию
 
 ```bash
-# Copy example environment file
+# Скопировать пример файла окружения
 cp .env.example .env
 
-# Edit .env with your credentials
-# Add your Google service account JSON to credentials/
+# Отредактировать .env с вашими credentials
+# Добавить ваш Google service account JSON в credentials/
 ```
 
 ---
 
-## ⚙️ Configuration
+## ⚙️ Конфигурация
 
-### Environment Variables (.env)
+### Переменные окружения (.env)
 
 ```env
 # Kommo CRM
-KOMMO_SUBDOMAIN=your_subdomain
-KOMMO_ACCESS_TOKEN=your_long_lived_token
+KOMMO_SUBDOMAIN=ваш_субдомен
+KOMMO_ACCESS_TOKEN=ваш_долгосрочный_токен
 
 # Google Sheets
 GOOGLE_CREDENTIALS_PATH=credentials/google_service_account.json
-GOOGLE_SHEET_ID=your_sheet_id
+GOOGLE_SHEET_ID=id_вашей_таблицы
 GOOGLE_SHEET_NAME=Orders
 
-# Sync Settings
+# Настройки синхронизации
 SYNC_INTERVAL=10
 LOG_LEVEL=INFO
 ```
 
-### Google Service Account Setup
+### Настройка Google Service Account
 
-1. Create service account in Google Cloud Console
-2. Enable Google Sheets API
-3. Download JSON credentials
-4. Place in `credentials/google_service_account.json`
-5. Share your Google Sheet with service account email
+1. Создать service account в Google Cloud Console
+2. Включить Google Sheets API
+3. Скачать JSON credentials
+4. Поместить в `credentials/google_service_account.json`
+5. Расшарить вашу Google таблицу на email service account
 
-### Kommo CRM Setup
+### Настройка Kommo CRM
 
-1. Get your subdomain from Kommo URL
-2. Create integration in Kommo settings
-3. Generate long-lived access token
-4. Add required custom fields:
-   - Telegram ID (text)
-   - Telegram Username (text)
-   - Telegram Chat Link (text)
+1. Получить ваш субдомен из URL Kommo
+2. Создать интеграцию в настройках Kommo
+3. Сгенерировать долгосрочный токен доступа
+4. Добавить необходимые пользовательские поля:
+   - Telegram ID (текст)
+   - Telegram Username (текст)
+   - Telegram Chat Link (текст)
 
 ---
 
-## 🚀 Usage
+## 🚀 Использование
 
-### Run Synchronization
+### Запуск синхронизации
 
-#### One-time Sync
+#### Разовая синхронизация
 ```bash
 python main.py --mode once
 ```
 
-#### Scheduled Sync (every 10 seconds)
+#### Синхронизация по расписанию (каждые 10 секунд)
 ```bash
 python main.py --mode schedule
 ```
 
-#### Test Connection
+#### Тест подключения
 ```bash
 python main.py --test
 ```
 
-### Generate Demo Data
+### Генерация демо-данных
 
-#### Create Test Contacts (Telegram Bot Simulator)
+#### Создать тестовые контакты (Симулятор Telegram бота)
 ```bash
 python demo/telegram_bot_simulator.py --contacts 10
 ```
 
-#### Create Test Orders (Sales Bot Simulator)
+#### Создать тестовые заказы (Симулятор бота продаж)
 ```bash
 python demo/sales_bot_simulator.py --generate 20
 ```
 
-#### Create Custom Fields in Kommo
+#### Создать пользовательские поля в Kommo
 ```bash
 python demo/create_custom_fields.py
 ```
 
-### Run Full Demo
+### Запуск полного демо
 
-**All 3 modules simultaneously:**
+**Все 3 модуля одновременно:**
 ```bash
 python demo_runner.py
 ```
 
-This runs:
-- 👤 Contact Generator (every 15s)
-- 🛍️ Order Generator (every 12s)
-- 🔄 Order Sync (every 20s)
+Это запускает:
+- 👤 Генератор контактов (каждые 15с)
+- 🛍️ Генератор заказов (каждые 12с)
+- 🔄 Синхронизация заказов (каждые 20с)
 
 ---
 
-## 📊 Google Sheets Structure
+## 📊 Структура Google Sheets
 
-Your Google Sheet should have these columns:
+Ваша Google таблица должна содержать эти колонки:
 
-| Column | Type | Description |
-|--------|------|-------------|
-| `telegram_username` | string | @username of customer |
-| `telegram_id` | string | Telegram ID (used for matching) |
-| `date` | date | Order date (YYYY-MM-DD) |
-| `product` | string | Product name |
-| `amount` | number | Order amount |
-| `currency` | string | Currency (USD, EUR, RUB) |
+| Колонка | Тип | Описание |
+|--------|------|----------|
+| `telegram_username` | string | @username клиента |
+| `telegram_id` | string | Telegram ID (используется для поиска) |
+| `date` | date | Дата заказа (YYYY-MM-DD) |
+| `product` | string | Название товара |
+| `amount` | number | Сумма заказа |
+| `currency` | string | Валюта (USD, EUR, RUB) |
 | `payment_status` | string | paid, pending, cancelled |
 
-**Example:**
+**Пример:**
 ```
 @ivan_petrov, 100001, 2025-10-24, Premium Subscription, 99.99, USD, paid
 @maria_k, 100002, 2025-10-24, Pro Account, 149.50, EUR, pending
@@ -202,18 +202,20 @@ Your Google Sheet should have these columns:
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Архитектура
 
 ```
 ┌─────────────────┐
 │ Google Sheets   │
-│  (Orders Data)  │
+│  (Данные        │
+│   заказов)      │
 └────────┬────────┘
          │
          ▼
 ┌─────────────────┐      ┌──────────────────┐
 │  SheetsClient   │      │   KommoClient    │
-│  (read orders)  │      │  (CRM API)       │
+│  (чтение        │      │  (CRM API)       │
+│   заказов)      │      │                  │
 └────────┬────────┘      └────────┬─────────┘
          │                        │
          └────────┬───────────────┘
@@ -221,61 +223,63 @@ Your Google Sheet should have these columns:
                   ▼
          ┌────────────────┐
          │ OrderSyncService│
-         │  - Deduplicate  │
-         │  - Create leads │
-         │  - Add notes    │
-         │  - Tag contacts │
+         │  - Дедупликация │
+         │  - Создание     │
+         │    сделок       │
+         │  - Добавление   │
+         │    заметок      │
+         │  - Тегирование  │
          └────────┬────────┘
                   │
                   ▼
          ┌────────────────┐
          │   Kommo CRM    │
-         │ - Contacts     │
-         │ - Leads        │
+         │ - Контакты     │
+         │ - Сделки       │
          │ - Timeline     │
-         │ - Tags         │
+         │ - Теги         │
          └────────────────┘
 ```
 
 ---
 
-## 📁 Project Structure
+## 📁 Структура проекта
 
 ```
 kommo-crm-integration/
 ├── src/
 │   ├── __init__.py
-│   ├── kommo_client.py          # Kommo CRM API client
-│   ├── sheets_client.py         # Google Sheets client
-│   ├── order_sync_service.py    # Sync orchestration logic
-│   ├── message_simulator.py     # Telegram conversation generator
-│   └── logger.py                # Logging configuration
+│   ├── kommo_client.py          # Kommo CRM API клиент
+│   ├── sheets_client.py         # Google Sheets клиент
+│   ├── order_sync_service.py    # Логика синхронизации
+│   ├── message_simulator.py     # Генератор Telegram диалогов
+│   └── logger.py                # Настройка логирования
 │
 ├── demo/
-│   ├── telegram_bot_simulator.py  # Contact generator
-│   ├── sales_bot_simulator.py     # Order generator
-│   └── create_custom_fields.py    # Setup Kommo fields
+│   ├── telegram_bot_simulator.py  # Генератор контактов
+│   ├── sales_bot_simulator.py     # Генератор заказов
+│   └── create_custom_fields.py    # Настройка полей Kommo
 │
 ├── credentials/
-│   └── google_service_account.json  # Google credentials (not in git)
+│   └── google_service_account.json  # Google credentials (не в git)
 │
 ├── logs/
-│   └── kommo-sync.log             # Application logs
+│   └── kommo-sync.log             # Логи приложения
 │
-├── config.py                      # Configuration loader
-├── main.py                        # Entry point
-├── demo_runner.py                 # Unified demo runner
-├── requirements.txt               # Python dependencies
-├── .env.example                   # Environment template
-├── .gitignore                     # Git ignore rules
-└── README.md                      # This file
+├── config.py                      # Загрузчик конфигурации
+├── main.py                        # Точка входа
+├── demo_runner.py                 # Объединённый демо-раннер
+├── requirements.txt               # Python зависимости
+├── .env.example                   # Шаблон окружения
+├── .gitignore                     # Правила игнорирования Git
+└── README.md                      # Этот файл
 ```
 
 ---
 
-## 🔧 API Reference
+## 🔧 Справочник API
 
-### Order Object
+### Объект Order
 
 ```python
 Order(
@@ -289,7 +293,7 @@ Order(
 )
 ```
 
-### Timeline Note Format
+### Формат заметки Timeline
 
 ```
 🛍️ Товар: Premium Subscription
@@ -299,121 +303,121 @@ Order(
 📅 Дата: 24.10.2025
 ```
 
-### Lead (Deal) Format
+### Формат сделки (Lead)
 
-- **Name:** `{product} - {date}`
-- **Budget:** `{amount}`
-- **Contact:** Linked to contact by Telegram ID
-- **Status:** Initial pipeline stage
-
----
-
-## 🏷️ Tags
-
-Contacts are automatically tagged based on activity:
-
-| Tag | Description | Added When |
-|-----|-------------|------------|
-| `Support` | Support conversations | Has support messages |
-| `Docs` | Documentation requests | Asks about docs |
-| `Refund` | Refund requests | Mentions refund |
-| `Billing` | Has orders | Any order synced |
+- **Название:** `{product} - {date}`
+- **Бюджет:** `{amount}`
+- **Контакт:** Привязан к контакту по Telegram ID
+- **Статус:** Начальный этап воронки
 
 ---
 
-## 📝 Logging
+## 🏷️ Теги
 
-Logs are written to:
-- **Console** (colored output)
-- **File** `logs/kommo-sync.log` (with rotation)
+Контакты автоматически тегируются в зависимости от активности:
 
-Log levels: `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL`
+| Тег | Описание | Добавляется когда |
+|-----|----------|-------------------|
+| `Support` | Обращения в поддержку | Есть сообщения в поддержку |
+| `Docs` | Запросы документации | Спрашивает о документации |
+| `Refund` | Запросы возврата | Упоминает возврат |
+| `Billing` | Есть заказы | Любой заказ синхронизирован |
 
-Example output:
+---
+
+## 📝 Логирование
+
+Логи записываются в:
+- **Консоль** (цветной вывод)
+- **Файл** `logs/kommo-sync.log` (с ротацией)
+
+Уровни логов: `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL`
+
+Пример вывода:
 ```
-[2025-10-24 17:12:01] [INFO] Starting order synchronization
-[2025-10-24 17:12:01] [INFO] Found 5 orders in Google Sheets
-[2025-10-24 17:12:01] [INFO] Grouped orders into 4 unique contacts
-[2025-10-24 17:12:02] [INFO]   💰 Created lead ID: 2013280
-[2025-10-24 17:12:02] [INFO]   🏷️  Added 'Billing' tag to contact
+[2025-10-24 17:12:01] [INFO] Начало синхронизации заказов
+[2025-10-24 17:12:01] [INFO] Найдено 5 заказов в Google Sheets
+[2025-10-24 17:12:01] [INFO] Заказы сгруппированы по 4 уникальным контактам
+[2025-10-24 17:12:02] [INFO]   💰 Создана сделка ID: 2013280
+[2025-10-24 17:12:02] [INFO]   🏷️  Добавлен тег 'Billing' контакту
 [2025-10-24 17:12:02] [INFO]   ✓ Training Course - 4407.03 USD (paid)
 ```
 
 ---
 
-## 🧪 Testing
+## 🧪 Тестирование
 
-Run tests:
+Запуск тестов:
 ```bash
 pytest tests/
 ```
 
 ---
 
-## 🚨 Troubleshooting
+## 🚨 Решение проблем
 
-### Common Issues
+### Частые проблемы
 
-**1. Authentication Failed (401)**
-- Check `KOMMO_ACCESS_TOKEN` is valid
-- Ensure token hasn't expired
-- Verify subdomain is correct
+**1. Ошибка аутентификации (401)**
+- Проверьте что `KOMMO_ACCESS_TOKEN` валидный
+- Убедитесь что токен не истёк
+- Проверьте правильность субдомена
 
-**2. Google Sheets Permission Denied**
-- Share sheet with service account email
-- Check service account has read access
-- Verify Sheet ID is correct
+**2. Google Sheets доступ запрещён**
+- Расшарьте таблицу на email service account
+- Проверьте что service account имеет доступ на чтение
+- Проверьте правильность Sheet ID
 
-**3. Contact Not Found**
-- Ensure "Telegram ID" custom field exists in Kommo
-- Check field name matches exactly (case-sensitive)
-- Verify Telegram IDs match between sheet and CRM
+**3. Контакт не найден**
+- Убедитесь что пользовательское поле "Telegram ID" существует в Kommo
+- Проверьте что название поля совпадает точно (учитывая регистр)
+- Проверьте что Telegram ID совпадают между таблицей и CRM
 
-**4. Duplicates Still Created**
-- Check deduplication logic in logs
-- Verify order fingerprinting (date + amount + product)
-- Ensure timeline notes format is consistent
-
----
-
-## 🤝 Contributing
-
-Contributions welcome! Please:
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Submit pull request
+**4. Всё равно создаются дубликаты**
+- Проверьте логику дедупликации в логах
+- Проверьте fingerprinting заказов (дата + сумма + товар)
+- Убедитесь что формат заметок timeline консистентный
 
 ---
 
-## 📄 License
+## 🤝 Вклад в проект
 
-MIT License - see [LICENSE](LICENSE) file for details.
+Вклад приветствуется! Пожалуйста:
+1. Сделайте fork репозитория
+2. Создайте feature ветку
+3. Внесите изменения
+4. Добавьте тесты
+5. Отправьте pull request
 
 ---
 
-## 🔗 Links
+## 📄 Лицензия
 
-- **Repository:** https://github.com/automatesh/kommo-crm-integration
+MIT License - см. файл [LICENSE](LICENSE) для деталей.
+
+---
+
+## 🔗 Ссылки
+
+- **Репозиторий:** https://github.com/automatesh/kommo-crm-integration
 - **Kommo CRM API:** https://www.kommo.com/developers/
 - **Google Sheets API:** https://developers.google.com/sheets/api
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 Автор
 
 **automatesh**  
 📧 alex@automatesh.it.com
 
 ---
 
-## 🙏 Acknowledgments
+## 🙏 Благодарности
 
-- Kommo CRM for excellent API documentation
-- Google Sheets API for easy integration
-- Python community for amazing libraries
+- Kommo CRM за отличную документацию API
+- Google Sheets API за простую интеграцию
+- Python сообществу за потрясающие библиотеки
 
 ---
 
-**Built with ❤️ for seamless CRM automation**
+**Создано с ❤️ для бесшовной автоматизации CRM**
